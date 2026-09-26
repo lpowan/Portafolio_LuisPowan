@@ -1,10 +1,10 @@
-body {
+body.portafolio {
     background-color: #0d0221;
-    color:#f9f002;
+    color: #f9f002;
     font-family: serif;
 }
 
-header {
+.portafolio header {
     position: fixed;
     background-color: #190933;
     top: 0;
@@ -14,8 +14,8 @@ header {
     padding: 10px;
 }
 
-aside {
-    position: fixed;  
+.portafolio aside {
+    position: fixed;
     background-color: #140a2b;
     top: 110px;
     left: 0;
@@ -23,8 +23,9 @@ aside {
     bottom: 20px;
     padding: 10px;
 }
-section {
-    position: fixed;  
+
+.portafolio section {
+    position: fixed;
     background-color: #0f0624;
     top: 110px;
     left: 20%;
@@ -33,10 +34,11 @@ section {
     padding: 10px;
     overflow-y: scroll;
 }
-footer {
-    position: fixed;  
+
+.portafolio footer {
+    position: fixed;
     background-color: #05010d;
-    color: #05d9e8;    
+    color: #05d9e8;
     left: 0;
     width: 100%;
     height: 20px;
@@ -44,46 +46,42 @@ footer {
     text-align: center;
 }
 
-nav {
-   display: flex;
-   justify-content: space-between;
-   margin: 0 10px;
+.portafolio nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px;
 }
 
-.logo {
+.portafolio .logo {
     font-size: 30px;
     font-weight: bold;
     font-family: cursive;
     line-height: 90px;
 }
 
-.nav-link {
+.portafolio .nav-link {
     text-decoration: none;
     color: white;
 }
 
-.nav-menu {
+.portafolio .nav-menu {
     list-style: none;
     display: flex;
     margin-right: 40px;
 }
 
-.nav-menu-item {
+.portafolio .nav-menu-item {
     font-size: 22px;
     margin: 0 10px;
     line-height: 90px;
 }
 
-.menu-item {
+.portafolio .menu-item {
     padding: 5px;
     background-color: #ff2a6d;
     border-radius: 10px;
 }
 
-.menu-item:hover {
+.portafolio .menu-item:hover {
     background-color: #05d9e8;
 }
-
-
-
-
