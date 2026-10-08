@@ -31,7 +31,7 @@
                             <div class="modal-body">
                                 <div class="mb-3">
                                     <label>[[#{producto.categoria}]]</label>
-                                    <select name="categoria.idCategoria" 
+                                    <select name="idCategoria" 
                                             class="form-select" 
                                             aria-label="Default select example">
                                         <option th:each="c : ${categorias}" th:value="${c.idCategoria}">
@@ -106,7 +106,7 @@
                                             <td class="text-center">[[${p.existencias}]]</td>
                                             <td class="text-end">[[${#numbers.formatCurrency(p.precio*p.existencias)}]]</td>
                                             <td><img th:src="@{${p.rutaImagen}}" alt="noData" height="75"/></td>
-                                            <td>[[${p.categoria.descripcion}]]</td>
+                                            <td>[[${p.idCategoria}]]</td>
                                             <td th:text="${p.activo} ? 'Activa':'Inactiva'"></td>
                                             <td sec:authorize="hasRole('ROLE_ADMIN')">
                                                 <button type="button" class="btn btn-danger"
@@ -162,7 +162,7 @@
                                     <div class="card-body">
                                         <div class="mb-3">
                                             <label>[[#{producto.categoria}]]</label>
-                                            <select name="categoria.idCategoria" th:field="*{categoria.idCategoria}"
+                                            <select name="idCategoria" th:field="*{idCategoria}"
                                                     class="form-select" aria-label="Default select example">
                                                 <option th:each="c : ${categorias}" th:value="${c.idCategoria}">
                                                     [[${c.descripcion}]]
