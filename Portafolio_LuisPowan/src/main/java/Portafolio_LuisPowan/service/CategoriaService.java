@@ -24,12 +24,12 @@ public class CategoriaService {
 
         // El repositorio es final para asegurar la inmutabilidad
     private final CategoriaRepository categoriaRepository;
-    private final FireBaseStorageService firebaseStorageService;
+    private final LocalStorageService localStorageService;
 
     // Inyeccion por constructor (no requiere @Autowired en Spring moderno)
-    public CategoriaService(CategoriaRepository categoriaRepository, FireBaseStorageService firebaseStorageService) {
+    public CategoriaService(CategoriaRepository categoriaRepository, LocalStorageService localStorageService) {
         this.categoriaRepository = categoriaRepository;
-        this.firebaseStorageService = firebaseStorageService;
+        this.localStorageService = localStorageService;
     }
 
     @Transactional(readOnly = true)
@@ -50,7 +50,7 @@ public class CategoriaService {
         categoria = categoriaRepository.save(categoria);
         if (!imagenFile.isEmpty()) { //Si no está vacío... pasaron una imagen...
             try {
-                String rutaImagen = firebaseStorageService.uploadImage(
+                String rutaImagen = localStorageService.uploadImage(
                         imagenFile, "categoria",
                         categoria.getIdCategoria());
                 categoria.setRutaImagen(rutaImagen);

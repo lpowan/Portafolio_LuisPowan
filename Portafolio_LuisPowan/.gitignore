@@ -35,5 +35,6 @@ build/
 ### Credenciales locales ###
 secrets.properties
 
-### Clave privada de Firebase (el repositorio es publico) ###
-src/main/resources/firebase/*.json
+
+### Imagenes subidas en local ###
+uploads/

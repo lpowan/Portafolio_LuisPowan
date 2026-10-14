@@ -21,11 +21,11 @@ import org.springframework.web.multipart.MultipartFile;
 public class ProductoService {
     
      private final ProductoRepository productoRepository;
-     private final FireBaseStorageService firebaseStorageService;
+     private final LocalStorageService localStorageService;
 
-    public ProductoService(ProductoRepository productoRepository, FireBaseStorageService firebaseStorageService) {
+    public ProductoService(ProductoRepository productoRepository, LocalStorageService localStorageService) {
         this.productoRepository = productoRepository;
-        this.firebaseStorageService = firebaseStorageService;
+        this.localStorageService = localStorageService;
     }
 
     @Transactional(readOnly = true)
@@ -46,7 +46,7 @@ public class ProductoService {
         producto = productoRepository.save(producto);
         if (!imagenFile.isEmpty()) { //Si no está vacío... pasaron una imagen...
             try {
-                String rutaImagen = firebaseStorageService.uploadImage(
+                String rutaImagen = localStorageService.uploadImage(
                         imagenFile, "producto",
                         producto.getIdProducto());
                 producto.setRutaImagen(rutaImagen);
