@@ -15,4 +15,6 @@ import org.springframework.stereotype.Repository;
 public interface ProductoRepository extends JpaRepository<Producto, Integer> {
     
     public List<Producto> findByActivoTrue();
+    
+    
 }
