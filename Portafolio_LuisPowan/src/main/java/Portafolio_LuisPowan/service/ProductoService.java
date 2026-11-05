@@ -1,4 +1,3 @@
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -89,5 +88,9 @@ public class ProductoService {
         return productoRepository.consultaSQL(precioInf, precioSup);
     }
 
-   
+    //Tarea 2
+    @Transactional(readOnly = true)
+    public List<Producto> consultaPractica(String descripcion) {
+        return productoRepository.findByDescripcionContainingIgnoreCaseOrderByPrecioAsc(descripcion);
+    }
 }

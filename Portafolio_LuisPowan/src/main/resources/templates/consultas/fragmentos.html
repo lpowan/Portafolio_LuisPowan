@@ -69,7 +69,28 @@
             <div th:replace="~{consultas/fragmentos :: formConsulta('primary',#{consultas.derivadas},'/consultas/consultaDerivada')}"/>
             <div th:replace="~{consultas/fragmentos :: formConsulta('warning',#{consultas.jpql},'/consultas/consultaJPQL')}"/>
             <div th:replace="~{consultas/fragmentos :: formConsulta('success',#{consultas.sql},'/consultas/consultaSQL')}"/>
-            <div class='card'><p>Acá va su Práctica #2</p></div>
+            <!-- Tarea 2: Practica #2 -->
+            <div>
+                <form method="post" th:action="@{/consultas/consultaPractica}" class='was-validated'>
+                    <div class='card p-2'>
+                        <div class="card-header text-center text-white bg-secondary">
+                            <h5>[[#{consultas.practica}]]</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class='mb-3'>
+                                <label>[[#{consultas.practica}]]</label>
+                                <input type="text" name='descripcion' th:value='${descripcion}'
+                                       class='form-control' required/>
+                            </div>
+                        </div>
+                        <div class="card-footer text-center">
+                            <button type='submit' class='btn btn-secondary text-white'>
+                                <i class='fa-solid fa-magnifying-glass'></i> [[#{consultas.practica}]]
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </section>
 
         <!-- fragmento 4 formulario reutilizable para las consultas por precio -->
